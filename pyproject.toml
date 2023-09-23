@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pylx"
+version = "0.1.0"
+description = ""
+authors = ["Naoya Yamashita <conao3@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic = "^2.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+pytest-icdiff = "^0.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
