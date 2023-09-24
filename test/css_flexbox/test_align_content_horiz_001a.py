@@ -13,6 +13,12 @@ def test_main():
             margin_right=2,
             float=CssFloatEnum.left,
         ),
+        Css(
+            selector='div.a',
+            width=20,
+            height=10,
+            flex=CssFlexEnum.none,
+        )
     ]
     node = Node(
         class_='flexbox',
@@ -21,20 +27,11 @@ def test_main():
         ],
     )
 
-    expect = Node(
+    expect = Node.new(
         class_='flexbox',
-        x=8,
-        y=8,
-        width=20,
-        height=10,
+        pos=(8, 8, 20, 10),
         children=[
-            Node(
-                class_='a',
-                x=8,
-                y=8,
-                width=20,
-                height=10,
-            ),
+            Node.new(class_='a', pos=(8, 8, 20, 10)),
         ],
     )
 

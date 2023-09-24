@@ -14,6 +14,10 @@ class CssDisplayEnum(enum.Enum):
     flex = enum.auto()
 
 
+class CssFlexEnum(enum.Enum):
+    none = enum.auto()
+
+
 class CssFlexWrapEnum(enum.Enum):
     wrap = enum.auto()
 
@@ -32,6 +36,7 @@ class Css(pydantic.BaseModel):
     width: Optional[int | CssSize] = None
     height: Optional[int | CssSize] = None
     display: Optional[CssDisplayEnum] = None
+    flex: Optional[CssFlexEnum] = None
     flex_wrap: Optional[CssFlexWrapEnum] = None
     margin_right: Optional[int | CssSize] = None
     float: Optional[CssFloatEnum] = None
