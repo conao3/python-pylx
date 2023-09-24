@@ -21,9 +21,21 @@ def test_main():
         ],
     )
 
-    expect = {
-        'flexbox': Layout(x=8, y=8, width=20, height=10),
-        'flexbox.a': Layout(x=8, y=8, width=20, height=10),
-    }
+    expect = Node(
+        class_='flexbox',
+        x=8,
+        y=8,
+        width=20,
+        height=10,
+        children=[
+            Node(
+                class_='a',
+                x=8,
+                y=8,
+                width=20,
+                height=10,
+            ),
+        ],
+    )
 
-    assert pylx.calculate_layout(node, css) == expect
+    assert pylx.calculate_layout(node, css).model_dump() == expect.model_dump()
